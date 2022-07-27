@@ -1,0 +1,25 @@
+{% extends 'main_register/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<!-- List of Employees in Selected Department -->
+<div class="row justify-content-center">
+    <div class="col-5">
+        <h4>
+            Employees
+        </h4>
+        <div class="list-group">
+            {% for employee in employees %}
+            <li class="list-group-item">
+                {{ employee.first_name }} {{ employee.last_name }}
+            </li>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

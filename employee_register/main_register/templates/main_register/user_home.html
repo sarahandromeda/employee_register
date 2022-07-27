@@ -1,0 +1,33 @@
+{% extends 'main_register/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-3">
+        <!-- Personal User Information -->
+        <h5>My Information</h5>
+        <ul class="list-group">
+            <li class="list-group-item">{{ user.first_name }} {{ user.last_name }}</li>
+            <li class="list-group-item">{{ user.email }}</li>
+            <li class="list-group-item">{{ user.user_name }}</li>
+          </ul>
+    </div>
+    <div class="col-4">
+        <!-- List of Companies Managed -->
+        <h5>My Companies</h5>
+        <div class="list-group">
+        {% for company in companies %}
+            <a href="/{{company.id}}/" class="list-group-item list-group-item-action">
+                {{ company.name }}
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

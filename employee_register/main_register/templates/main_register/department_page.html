@@ -1,0 +1,22 @@
+{% extends 'main_register/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<!-- List of Departments in Selected Company -->
+<div class="row justify-content-center">
+    <div class="col-3">
+        <div class="list-group">
+            {% for department in departments %}
+            <a href="{{department.id}}/" class="list-group-item list-group-item-action">
+                {{ department.name }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
