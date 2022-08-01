@@ -138,5 +138,6 @@ AUTH_USER_MODEL = 'user_register.NewUser'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/home/'
 LOGOUT_REDIRECT_URL = '/'
