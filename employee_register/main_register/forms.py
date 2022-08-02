@@ -20,3 +20,8 @@ class CompanyForm(ModelForm):
     class Meta:
         model = Company
         exclude = ['user', 'departments']
+
+class EditDepartmentForm(ModelForm):
+    class Meta:
+        model = Department
+        exclude = ['user', 'employees']

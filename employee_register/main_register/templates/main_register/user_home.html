@@ -21,7 +21,7 @@ Home
         <h5>My Companies</h5>
         <div class="list-group">
         {% for company in companies %}
-            <a href="/{{company.id}}/" class="list-group-item list-group-item-action">
+            <a href="/{{company.id}}/" id="view-instance" class="list-group-item list-group-item-action">
                 <div class="d-flex justify-content-between align-items-center">
                 {{ company.name }}
                 <small class="text-muted">
@@ -35,9 +35,16 @@ Home
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-muted">{{ company.industry }}</small>  
-                    <button type="submit" name="edit" class="btn btn-sm btn-success">Edit</button>
                 </div>
             </a>
+            <!-- Create edit form -->
+            <li class="list-group-item" id="update_form" style="display:none;">
+                <form action="{% url 'user_home' %}" method="POST">
+                    {% csrf_token %}
+                    {{ company_form|crispy }}
+                    <button type="submit" name="update" class="btn btn-success btn-sm">Submit</button>
+                </form>
+            </li>
         {% endfor %}
             <button type="button" id="new" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                 Add New
