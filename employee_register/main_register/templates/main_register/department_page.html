@@ -18,7 +18,7 @@
             <h4><a href="{% url 'user_home' %}">
                 {{ company.name }}
             </a></h4>
-            <a href="/company/{{ company.id }}">
+            <a href="{% url 'company_edit' company.id %}">
                 <button class="btn btn-success btn-sm">
                     Edit
                     <i class="bi bi-pencil-square"></i>
@@ -27,7 +27,7 @@
         </div>
         <div class="list-group">
             {% for department in departments %}
-                <a href="{{department.id}}/" id="view-instance" class="list-group-item list-group-item-action">
+                <a href="{% url 'employee_page' company.id department.id%}" id="view-instance" class="list-group-item list-group-item-action">
                     <div class="d-flex justify-content-between align-items-center">
                         {{ department.name }}
                         <small class="text-muted">

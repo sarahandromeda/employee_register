@@ -17,7 +17,7 @@
             <h4><a href="{% url 'department_page' company_id %}">
                 {{ department.name }}
             </a></h4>
-            <a href="/department/{{ department.id }}/">
+            <a href="{% url 'department_edit' department.id %}">
                 <button class="btn btn-success btn-sm">
                     Edit
                     <i class="bi bi-pencil-square"></i>
@@ -52,7 +52,7 @@
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                     <small class="text-muted">{{ employee.title }}</small>  
-                    <a href="/employee/{{ employee.id }}/">
+                    <a href="{% url 'employee_edit' employee.id %}">
                         <button type="submit" id="edit" name="edit" value="{{ employee.id }}" class="btn btn-sm btn-success">
                             Edit <i class="bi bi-pencil-square"></i>
                         </button>

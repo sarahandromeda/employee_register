@@ -13,10 +13,11 @@ Edit Employee
         <div class="list-group">
              <!-- Create an edit form for each instance that replaces view with edit form-->
              <li class="list-group-item" id="update_form">
-                <form action="/employee/{{employee.id}}/" method="POST" id="edit_employee">
+                <form action="{% url 'employee_edit' employee.id %}" method="POST" id="edit_employee">
                     {% csrf_token %}
                     {{ employee_edit_form|crispy }}
-                    <button type="submit" name="update" class="btn btn-success btn-sm">Submit</button>
+                    <button type="submit" name="update" value="update_entry" class="btn btn-success btn-sm">Submit</button>
+                    <button type="submit" name="delete" value="delete_entry" class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </li>
         </div>
