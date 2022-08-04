@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'phonenumber_field',
     "crispy_forms",
     "crispy_bootstrap5",
     'main_register.apps.MainRegisterConfig',
