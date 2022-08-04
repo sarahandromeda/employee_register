@@ -1,0 +1,1 @@
+web: gunicorn employee-register/employee_register.wsgi
