@@ -90,7 +90,6 @@ DATABASES = {
         'USER': 'SarahG',
         'PASSWORD': os.getenv('PASSWORD'),
         'HOST': 'localhost',
-        'PORT': '',
     }
 }
 
